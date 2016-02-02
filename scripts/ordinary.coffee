@@ -8,8 +8,12 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
-var cron = require('cron').CronJob
+cron = require('cron').CronJob
 
 module.exports = (robot) ->
   new cron '0 18 * * *', =>
     robot.send {room: '#general'}, '今日のレシートはカードホルダーに入れたかな？'
+
+module.exports = (robot) ->
+  new cron '0 7 * * *', =>
+    robot.send {room: '#general'}, 'おはようございます！今日もいちにち頑張ろう！'
