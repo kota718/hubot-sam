@@ -19,7 +19,12 @@ module.exports = (robot) ->
 
 module.exports = (robot) ->
   new cron(
-    cronTime: '0 50 20 * * *',
-    onTrick: robot.send {room: '#general'}, '今日のレシートはカードホルダーに入れたかな？',
+    cronTime: '0 0 0 * * *',
+    onTrick: -> robot.send {room: '#general'}, '今日もいちにちお疲れ様でした！',
+    start: true
+module.exports = (robot) ->
+  new cron(
+    cronTime: '0 0 21 * * *',
+    onTrick: -> robot.send {room: '#general'}, '今日のレシートはカードホルダーに入れたかな？',
     start: true
   )
