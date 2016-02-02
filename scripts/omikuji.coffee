@@ -7,6 +7,6 @@
 module.exports = (robot) ->
   robot.respond /おみくじ/, (res) ->
     result = res.random ['大吉', '中吉', '小吉', '末吉', '凶', '大凶']
-    res.send "今日は「#{result}」です！"
+    res.send "今日の運勢は「#{result}」です！"
     
 
