@@ -5,6 +5,8 @@
   "author": "kota718 <kota.yt@gmail.com>",
   "description": "A simple helpful robot for your Company",
   "dependencies": {
+    "cheerio-httpcli": "0.6.3",
+    "coffee-script": "^1.10.0",
     "cron": "^1.1.0",
     "hubot": "^2.18.0",
     "hubot-diagnostics": "0.0.1",
@@ -15,13 +17,13 @@
     "hubot-maps": "0.0.2",
     "hubot-pugme": "^0.1.0",
     "hubot-redis-brain": "0.0.3",
+    "hubot-rss-reader": "^0.8.3",
     "hubot-rules": "^0.1.1",
     "hubot-scripts": "^2.16.2",
     "hubot-shipit": "^0.2.0",
     "hubot-slack": "^3.4.2",
     "time": "^0.11.4",
-    "twit": "2.2.2",
-    "cheerio-httpcli": "0.6.3"
+    "twit": "2.2.2"
   },
   "engines": {
     "node": "0.10.x"
