@@ -22,4 +22,4 @@ doSearch = (robot) ->
        console.log "Error getting tweets: #{err}"
        return
      if data.statuses? and data.statuses.length > 0
-       res.send {room: '#general'}, data.statuses[0].text
+       res.send {room: 'general'}, data.statuses[0].text
