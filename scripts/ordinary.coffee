@@ -12,24 +12,27 @@ Cron = require('cron').CronJob
 
 module.exports = (robot) ->
   new Cron(
-    cronTime: '0 30 6 * * *',
+    cronTime: '00 30 06 * * *'
     onTrick: -> 
-      robot.send {room: 'general'}, 'おはようございます！今日もいちにち頑張ろう！',
+      robot.send {room: 'general'}, 'おはようございます！今日もいちにち頑張ろう！'
+      return
     start: true
   )
 
 module.exports = (robot) ->
   new Cron(
-    cronTime: '0 0 0 * * *',
+    cronTime: '00 00 00 * * *'
     onTrick: ->
-      robot.send {room: 'general'}, '今日もいちにちお疲れ様でした！',
+      robot.send {room: 'general'}, '今日もいちにちお疲れ様でした！'
+      return
     start: true
   )
     
 module.exports = (robot) ->
   new Cron(
-    cronTime: '0 0 21 * * *',
+    cronTime: '00 00 21 * * *'
     onTrick: -> 
-      robot.send {room: 'general'}, '今日のレシートはカードホルダーに入れたかな？',
+      robot.send {room: 'general'}, '今日のレシートはカードホルダーに入れたかな？'
+      return
     start: true
   )

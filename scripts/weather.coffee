@@ -9,17 +9,18 @@ config =
 
 module.exports = (robot) ->
   new Cron(
-    cronTime: '0 0 7 * * *',
-    onTrick: doSearch(robot),
+    cronTime: '00 00 07 * * *'
+    onTrick: ->
+      doSearch(robot)
+      return
     start: true
   )
 
 doSearch = (robot) ->
- robot.respond /天気/, (res) ->
-   twit = new Twit config
-   twit.get 'search/tweets', {q: "from:@Yahoo_weather #東京の天気", count: 1}, (err, data) ->
-     if err
-       console.log "Error getting tweets: #{err}"
-       return
-     if data.statuses? and data.statuses.length > 0
-       res.send {room: 'general'}, data.statuses[0].text
+  twit = new Twit config
+  twit.get 'search/tweets', {q: "from:@Yahoo_weather #東京の天気", count: 1}, (err, data) ->
+    if err
+      console.log "Error getting tweets: #{err}"
+      return
+    if data.statuses? and data.statuses.length > 0
+      robot.send {room: 'general'}, data.statuses[0].text
