@@ -4,7 +4,7 @@ Cron = require('cron').CronJob
 module.exports = (robot) ->
   new Cron(
     cronTime: '00 00 08 * * *'
-    onTrick: ->
+    onTick: ->
       doInfomation(robot)
       return
     start: true
